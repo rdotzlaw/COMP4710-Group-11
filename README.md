@@ -13,3 +13,10 @@
   - Write report (10 page minimum using [IEEE template 2-column](https://www.ieee.org/conferences/publishing/templates.html))
   - Presentation (video or live powerpoint)
 
+## Data sources
+- [Harvard Long Covid Dataset](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/N5I10C%0b)
+- [Another Long Covid Dataset](https://data.humdata.org/dataset/long-covidresearchagenda)
+- [UK Omnicron Variant Long Covid Dataset](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/selfreportedlongcovidafterinfectionwiththeomicronvariantintheuk%0b)
+- [Demographic Suceptability Dataset](https://data.cdc.gov/NCHS/Post-COVID-Conditions/gsea-w83j%0b)
+- [Long Covid Symptoms Research](https://www.ejinme.com/article/S0953-6205(21)00208-9/fulltext)
+
