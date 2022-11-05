@@ -1,36 +1,3 @@
-### OVERVIEW
-
-Data mining refers to the non-trivial extraction of implicit, previously unknown, and potentially useful information from data. This project gives COMP 4710 students a chance to get a deeper understanding on some topics at a level suitable for undergraduate students.
-
-### GROUP SIZE
-
-Each group is expected to consist of 3-4 students.
-
-### POTENTIAL TOPICS
-
-Topics for the project include, but not limited to, either (1) development of new ideas related to or (2) extension to, existing algorithms in the following area:
-
-- Frequent sub-graph mining, direct acyclic graph (DAG) mining, mining interaction patterns
-- Fuzzy-set or rough-set approaches for frequent pattern mining
-- Share-frequent pattern mining
-- Weighted frequent pattern mining
-- High utility pattern mining
-- Hyper-linked structure frequent pattern mining
-- Emerging/contrast pattern mining
-- Probabilistic-frequent pattern (p-FP) mining
-- Quantitative association rule mining
-- Big data mining (with Spark, MapReduce, cloud computing, fog or edge computing)
-- Social network mining (e.g., opinion mining, collaborative filtering, community detection)
-- Blockchain data mining
-- Mining fake news farm
-- Privacy-preserving data mining
-- Text mining, Web mining
-- Rare pattern mining, anomaly detection
-- Clustering and classification
-- Bio-medical data mining
-- Incremental and interactive mining
-- Visual analytics
-
 ### DUE DATE
 
 Electronic submission by () at 13:30 CST
