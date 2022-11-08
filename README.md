@@ -49,5 +49,6 @@
 - [Comprehensive Overview of Post Covid Condition](https://www.cadth.ca/sites/default/files/hs-eh/EH0096%20Long%20COVID%20v.7.0-Final.pdf )
 - [Explaining Random Forest Using Association Rules]( https://publikationen.bibliothek.kit.edu/1000117720/62928283)
 - [Random Forests](https://www.researchgate.net/publication/323553514_A_Practical_Introduction_to_Random_Forest_for_Genetic_Association_Studies_in_Ecology_and_Evolution )
+- [Prevalence of Post-Covid-19 Symptoms with Hospitalizations/No Hospitalizations](https://www.ejinme.com/article/S0953-6205(21)00208-9/fulltext)
 
 
