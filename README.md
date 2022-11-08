@@ -42,7 +42,7 @@
 ## Data sources
 - [Harvard Long Covid Dataset](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/N5I10C%0b)
 - [Another Long Covid Dataset](https://data.humdata.org/dataset/long-covidresearchagenda)
-- [UK Omnicron Variant Long Covid Dataset](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/selfreportedlongcovidafterinfectionwiththeomicronvariantintheuk%0b)
+- [UK Omnicron Variant Long Covid Dataset](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/selfreportedlongcovidafterinfectionwiththeomicronvariantintheuk%0b) (Apparently this dataset no longer exists)
 - [Demographic Suceptability Dataset](https://data.cdc.gov/NCHS/Post-COVID-Conditions/gsea-w83j%0b)
 ## Research
 - [Long Covid Symptoms Research](https://www.ejinme.com/article/S0953-6205(21)00208-9/fulltext)
