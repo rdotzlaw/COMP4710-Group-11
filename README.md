@@ -14,6 +14,11 @@
   - Write report (10 page minimum using [IEEE template 2-column](https://www.ieee.org/conferences/publishing/templates.html))
   - Presentation (video or live powerpoint)
 
+Da Tan: Predictive Model
+Ryan: Rule Mining
+Katrina: Analysis
+Sean: Data cleaning & powerpoint
+
 ### Step1: Data cleansing (now we have two datasets for use)
 - data format (csv)
 - data header (screen those useful for our research)
@@ -34,7 +39,7 @@
 - what does the model predict? (which variable we are going to use for prediction -- whether the case recover from long-COVID symptoms? It seems there is no such variable in the datasets)
 - the two datasets have different features, if we use both dataset for the model, we need to pick those common features between the two datsets, and shuffle the instances.
 
-## Step4: Clustering.
+### Step4: Clustering.
 - if a predictive model is infeasible, we may do some unsupervised learning such as K-mean clustering instead/in addition.
 
 ![General Flowchart](flow.PNG)
