@@ -14,10 +14,10 @@
   - Write report (10 page minimum using [IEEE template 2-column](https://www.ieee.org/conferences/publishing/templates.html))
   - Presentation (video or live powerpoint)
 
-Da Tan: Predictive Model
-Ryan: Rule Mining
-Katrina: Analysis
-Sean: Data cleaning & powerpoint
+Da Tan: Predictive Model  
+Ryan: Rule Mining  
+Katrina: Analysis  
+Sean: Data cleaning & powerpoint  
 
 ### Step1: Data cleansing (now we have two datasets for use)
 - data format (csv)
