@@ -3,6 +3,7 @@
 ### Input
 This program works explicitly with a cut-down/formatted version of [this census](https://www.census.gov/programs-surveys/household-pulse-survey/datasets.html) from the US Census Bureau, called _US_Week49_COVID.csv_ in the current directory.
 The modifications were done to clean up the data and remove irrelevant data. 
+
 ---
 ### Output
 
