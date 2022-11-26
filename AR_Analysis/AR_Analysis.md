@@ -80,4 +80,40 @@ Comparing the graphs with 'Long Covid Occuring' as the concequent and 'Long Covi
 Not Occuring' as the concequent. Since 72.44% of Covid-19 patients in this dataset reported not experiencing Long Covid-19, it makes sense that more rules would be found with 'Long Covid not Occuring' as the concequent.
 Over 400 rules were found with confidence ranging from approximately 0.6 to greater than 0.8. Again, the association rules found were sorted in ascending order by confidence.
 
-**association rule table***
+#### Interesting Association Rules with Support and Confidence
+| Rule Index  | Association Rule  | Support  | Confidence  |
+| ----------- | ----------- |----------- | ----------- |
+| 0       | (CURRENT GENDER_F, NUMBER DOSES_1.0, RACE_White) --> LONG COVID      | 0.10280095351609       | 0.307878633350331       |
+| 1       | (CURRENT GENDER_F, NUMBER DOSES_1.0, VACCINATED_1, RACE_White) --> LONG COVID       | 0.10280095351609       | 0.307878633350331       |
+| 2       | (CURRENT GENDER_F, NUMBER DOSES_1.0, BIRTH GENDER_F, RACE_White) --> LONG COVID       | 0.102502979737783       | 0.307928388746803       |
+| 3       | (NUMBER DOSES_1.0, VACCINATED_1, BIRTH GENDER_F, RACE_White) --> LONG COVID       | 0.10518474374255       | 0.309532757108856       |
+| 4       | (NUMBER DOSES_1.0, BIRTH GENDER_F, RACE_White) --> LONG COVID       | 0.10518474374255       | 0.309532757108856       |
+| 5       | (CURRENT GENDER_F, RACE_White, VACCINATED_1) --> LONG COVID       | 0.111186786991316       | 0.314093314093314       |
+| 6       | (CURRENT GENDER_F, VACCINATED_1, BIRTH GENDER_F, RACE_White) --> LONG COVID       | 0.110846245530393       | 0.314113389626055       |
+| 7       | (VACCINATED_1, BIRTH GENDER_F, RACE_White) --> LONG COVID       | 0.113698280265622       | 0.315460021259005       |
+| 8       | (CURRENT GENDER_F, NUMBER DOSES_1.0, BIRTH GENDER_F) --> LONG COVID       | 0.13847267154776       | 0.317211116528522       |
+| 9       | (CURRENT GENDER_F, NUMBER DOSES_1.0, BIRTH GENDER_F, VACCINATED_1) --> LONG COVID       | 0.13847267154776       | 0.317211116528522       |
+| 10       | (CURRENT GENDER_F, NUMBER DOSES_1.0) --> LONG COVID       | 0.138940916056529       | 0.31729367162438       |
+| 11       | (CURRENT GENDER_F, NUMBER DOSES_1.0, VACCINATED_1) --> LONG COVID       | 0.138940916056529       | 0.31729367162438       |
+| 12       | (NUMBER DOSES_1.0, BIRTH GENDER_F, VACCINATED_1) --> LONG COVID       | 0.142814575174527       | 0.319828408007626       |
+| 13       | (NUMBER DOSES_1.0, BIRTH GENDER_F) --> LONG COVID       | 0.142814575174527       | 0.319828408007626       |
+| 14       | (SYMPTOM SEVERITY_MODERATE, NUMBER DOSES_1.0) --> LONG COVID       | 0.109569215051932       | 0.319990054699154       |
+| 15       | (SYMPTOM SEVERITY_MODERATE, NUMBER DOSES_1.0, VACCINATED_1) --> LONG COVID       | 0.109569215051932       | 0.319990054699154       |
+| 16       | (CURRENT GENDER_F, RACE_White) --> LONG COVID       | 0.133449684999148       | 0.321538461538461       |
+| 17       | (CURRENT GENDER_F, BIRTH GENDER_F, RACE_White) --> LONG COVID       | 0.133109143538225       | 0.321608557029723       |
+| 18       | (BIRTH GENDER_F, RACE_White) --> LONG COVID       | 0.136301719734377       | 0.322684671974201       |
+| 19       | (SYMPTOM SEVERITY_MODERATE, RACE_White) --> LONG COVID       | 0.103907713264089       | 0.322883597883597       |
+| 20       | (CURRENT GENDER_F, BIRTH GENDER_F, VACCINATED_1) --> LONG COVID       | 0.151072705601907       | 0.323666210670314       |
+| 21       | (CURRENT GENDER_F, VACCINATED_1) --> LONG COVID       | 0.151626085475906       | 0.323818181818181       |
+| 22       | (SYMPTOM SEVERITY_MODERATE, VACCINATED_1) --> LONG COVID       | 0.117827345479312       | 0.324806383478056       |
+| 23       | (BIRTH GENDER_F, VACCINATED_1) --> LONG COVID       | 0.155840286054827       | 0.326059850374064       |
+| 24       | (SYMPTOM SEVERITY_MODERATE) --> LONG COVID       | 0.136174016686531       | 0.328035274815422       |
+| 25       | (CURRENT GENDER_F, BIRTH GENDER_F) --> LONG COVID       | 0.180401838923888       | 0.330603011155316       |
+| 26       | (CURRENT GENDER_F) --> LONG COVID       | 0.180955218797888       | 0.330662725575606       |
+| 27       | (BIRTH GENDER_F) --> LONG COVID       | 0.185850502298654       | 0.332520944402132       |
+| 28       | (CURRENT SYMPTOMS_YES, NUMBER DOSES_1.0, VACCINATED_1) --> LONG COVID       | 0.118167886940234       | 0.827421758569299       |
+| 29       | (CURRENT SYMPTOMS_YES, NUMBER DOSES_1.0) --> LONG COVID       | 0.118167886940234       | 0.827421758569299       |
+| 30       | (CURRENT SYMPTOMS_YES, VACCINATED_1) --> LONG COVID       | 0.127490209432998       | 0.832406892718176       |
+| 31       | (CURRENT SYMPTOMS_YES, RACE_White) --> LONG COVID       | 0.111910437595777       | 0.838329081632653       |
+| 32       | (CURRENT SYMPTOMS_YES) --> LONG COVID       | 0.147709858675293       | 0.844282238442822       |
+| 33       | (CURRENT SYMPTOMS_YES, BIRTH GENDER_F) --> LONG COVID       | 0.101779329133321       | 0.857911733046286       |
