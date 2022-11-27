@@ -2,7 +2,7 @@
 The following analysis was performed on the Kenya.csv data. More analysis will be available for the Malawi data as well as the US_WEKK46_COVID.csv data. All graphic and table result can be found in "clustering_result.xlsx"
 
 ## The age/gender sub groups statistics
-### Comparison of frequencies of post COVID symptoms between two age groups (ordered by the level of differences)
+### Comparison of frequencies of post COVID symptoms between two age groups (ordered by differences)
 ![post_COVID_symptom_age](age_percentage.png)
 - for age group > 50 years old, the symptoms of "Preixsting condition", "Non communicatable disease" and "Fatigue" are much more prevalent that the younger group. This is reasonable because of the bias of the age.
 - Some symptoms occured more in group of <=50 years old, such as "Diarrhea", "Loss of Taste". 
@@ -13,7 +13,7 @@ The following analysis was performed on the Kenya.csv data. More analysis will b
 - The deviances for most of the symptom freqencies between the two given genders are not significant.
 - Some symptoms are more prevalant in females, for example, "Shortness of Breath", "Chest Pain" and "Recurrent Fever".
 - Some symptoms are more prevalant in males, such as "Loss of Smell". "Loss of Taste" and "Heahache".
-- p-values of those significances will be updated.
+- p-values of those significances will be added.
 
 ## The frequencies similarities among the six age/gender combo subgroups:
 ![frequencies_cosine_similarity_subgroups](cosine_similarity.png)
@@ -24,7 +24,7 @@ The following analysis was performed on the Kenya.csv data. More analysis will b
 
 ## The k-mode clustering analysis and age/gender subgroup mapping
 - We further reduced the number symptoms with the threshold of 5% for clustering analysis, this result in 15 symptoms. Since all the symptoms are categorical variable (either 0 or 1), we performed a k-mode analysis.
-- First we optimize the number of clusters within the datset with metric of sum-of-within-cluster-simple-distance. To avoid too many clusters, we choose k=7, as shown below by the optimization path.
+- First we optimize the number of clusters within the datset with metric of Total-of-within-cluster-sum-of-square (a measurement of the compactness within a cluster). We choose at the elbow point when k=7, as shown below by the optimization path.
 ![number of clusters optimization](number_clusters_optimization.png)
 
 The modes of the 7 clusters:
