@@ -1,0 +1,8 @@
+cluster_id,Non.Communicable.Disease,Prexisting.Condition,Fatigue,Headache,Chest.Pain,Shortness.of.Breath,Joint.Pain,Loss.of.Smell,Loss.of.Taste,Persistent.Cough,Recurrent.Fever,Cough,Sore.Throat,Flu,Back.Ache,size
+1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,144
+2,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,140
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,46
+4,0,0,1,1,1,0,0,0,0,0,0,1,0,0,0,111
+5,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,131
+6,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,36
+7,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,69
