@@ -41,3 +41,19 @@ Then we mapped those clusters with the three age groups (there is no significant
 |5	|64	|53	|14|
 |6	|9	|20	|7|
 |7	|29	|35	|5|
+
+# Next plan: A classifier to predict whether a COVID patient would get long COVID or not.
+## Data:
+US_Week49_COVID dataset:
+|Datasize |	long-COVID|	non-long-COVID| Total |
+|-----------|--------|-------|-------|
+|	|6475	|17017	| 23492 |
+
+## Data features: (10 original features)
+AGE, RACE, BIRTH GENDER, VACCINATED, NUMBER DOSES, BOOSTER, TREAT ORAL, TREAT MONO, CURRENT SYMPTOMS, SYMPTOM SEVERITY
+
+## Data type:
+some features are numerical, and some are categorical.
+
+## planning algorithm:
+decision tree / random Forest, or something else if it performs better.
