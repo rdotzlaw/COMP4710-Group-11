@@ -55,5 +55,11 @@ AGE, RACE, BIRTH GENDER, VACCINATED, NUMBER DOSES, BOOSTER, TREAT ORAL, TREAT MO
 ## Data type:
 some features are numerical, and some are categorical.
 
-## planning algorithm:
-decision tree / random Forest, or something else if it performs better.
+## Planning algorithm:
+- deal with NA: we will set a threshold for the percentage of NA for a given feature: if the percentage is higher than the threshold, we discard this feature, if it is lower than the threshold, we will use median (or most frequent mode) values to fill the NAs.
+- We will divide the set into train/validation/test sets.
+- For test dataset, we only use the cases that do not contain NAs.
+- We will apply feature selection and engineering steps.
+- We plan to use 10-fold cross-validation to optimize the parameters of the model.
+- We will apply decision tree / random Forest, or other algorithm if it performs better.
+- We will use AUC on the test dataset to evaluate the model.
