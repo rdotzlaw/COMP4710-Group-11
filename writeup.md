@@ -24,6 +24,11 @@ Find frequent items
 	* So the column w/ data: ['M', 'F'] becomes [[1,0], [0,1]]
  * Use mlxtend.frequent_patterns.apriori to get frequent item sets
 
+Column Explanations  
+All are pretty much self explanatory, except:
+ * TREAT ORAL: If the patient recieved **Oral Antiviral Medication** or not
+ * TREAT MONO: If the patient recieved **Monoclonal Antibody Treatments** or not
+
 Association Rules
  * Use mlxtend.frequent_patterns.association_rules to mine the frequent itemsets for ARs w/ a min confidence of 0.3
  * Filter the ARs for ones that have 'LONG_COVID_1' (implies long covid) or 'LONG_COVID_0' (implies NOT long covid)
