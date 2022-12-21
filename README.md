@@ -40,7 +40,12 @@ This program was implemented using the following libraries:
   * For more extra math operations.
 
 ## Clustering and Classifier
-- add the readme from da tans branch
-#### Datasets Used
-- link to datasets used here?
+### Input
+
+
+### Output
+
+### Execution
+
+### Implementation
 
