@@ -1,16 +1,37 @@
 # symptoms-prevalence analysis and clustering for the Kenya and Malawi datasets
 
+## make sure you have installed these libraries before running the program
+library(DAAG)
+library(rpart)
+library(rpart.plot)
+library(caret)
+library(tree)
+library(foreign)
+library(tidyverse)
+library(mlr)
+library(gridExtra)
+library(party)
+library(partykit)
+library(MLmetrics)
+library(ggrepel)
+library(ggplot2)
+library(randomForest)
+library(ROCR)
+library(reshape)
+library(scales)
+library(klaR)
 
-library("ggplot2")
-library("reshape")
-library("scales")
-library("klaR")
+##set the working folder where this code residues, and put the source file 
+## data in the folder one level up
+#setwd("C:\\work\\internship\\COMP4710-Group-11\\src\\unsupervised_learning")
+#args <- commandArgs(TRUE)
 
-setwd("C:\\work\\internship\\COMP4710-Group-11\\src\\unsupervised_learning")
+# read in the datasets from the argument 1 and 2 respectively
+kenya <- read.csv("../KenyaData.csv", colClasses = "factor")
+malawi <- read.csv("../MalawiData.csv", colClasses = "factor")
+#kenya <- read.csv(args[1], colClasses = "factor")
+#malawi <- read.csv(args[2], colClasses = "factor")
 
-# read in the datasets
-kenya <- read.csv("../../KenyaData.csv", colClasses = "factor")
-malawi <- read.csv("../../MalawiData.csv", colClasses = "factor")
 
 # since kenya dataset contains 6 more features, which we need to delete
 kenya <- kenya[,-c(42:49)]
@@ -172,8 +193,12 @@ country_res <- bar_plot(country_df, "country")
 live_tp_res <- bar_plot(live_tp_df, "living_type")
 employ_res <- bar_plot(employ_df, "employed")
 live_with_res <- bar_plot(live_with_df, "living_with")
+png(file="./symptoms_demographic_relation.png", width=600, height=800)
 grid.arrange(age_res[[1]], gender_res[[1]], country_res[[1]],  employ_res[[1]], live_with_res[[1]],live_tp_res[[1]], ncol=2)
+dev.off()
 
+
+# get the figure interactively
 
 ## there are 2 * 3 = 6 combinations of age/gender
 ## Next, we compute the similarities among the age/gender subgroups in terms of cosine similarities
@@ -219,7 +244,9 @@ for(i in 1:6){
 
 row.names(sim_matr) <- subtypes
 colnames(sim_matr) <- subtypes
+png("age-gender-similarity heatmap.png")
 heatmap(sim_matr, keep.dendro = FALSE, Rowv=NA, Colv = NA, margin=c(10,10))
+dev.off()
 write.csv(round(as.data.frame(sim_matr),3),"6_age_gender_subgroup.csv", quote = FALSE)
 
 
@@ -232,17 +259,18 @@ wss <- sapply(1:15, function(k){
   sum(kmodes(kenya2[,-c(1:6)], k, iter.max = 100, weighted = TRUE)$withindiff)
 })
 
+png("K-mode clustering optimization path.png")
 plot(1:15, wss, type="b", pch = 19, frame = FALSE, 
      xlab="Number of clusters K",
      ylab="Total within-clusters sum of squares" )
-
+dev.off()
 ## optimal: 11 clusters: a good kink (elbow) point
 
 # K-mode clustering
 result <- kmodes(kenya2[,-c(1:6)], 11, iter.max = 100, weighted = TRUE)
 
 # report cluster size; cluster modes; and maybe within-cluster distance
-write.csv(as.data.frame(result$modes),"7clusters_modes.csv", quote = FALSE)
+write.csv(as.data.frame(result$modes),"11clusters_modes.csv", quote = FALSE)
 
 ## checking the overlapping of the clustering result with the age-gender subgroups
 subtypes2 <- unique(as.character(dff$Age))
@@ -254,6 +282,6 @@ for(i in 1:nrow(kenya2)){
   clus_matr[cluster,col] = clus_matr[cluster,col] + 1
 }
 colnames(clus_matr) <- subtypes2
-write.csv(as.data.frame(clus_matr),"7clusters_age_group.csv", quote = FALSE)
+write.csv(as.data.frame(clus_matr),"11clusters_age_group.csv", quote = FALSE)
 
 ## EOF
