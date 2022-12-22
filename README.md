@@ -2,7 +2,7 @@
 
 ## Folder structure
 ```
-./README.txt (this file)
+./README.md (this file)
 
 ./src
 
