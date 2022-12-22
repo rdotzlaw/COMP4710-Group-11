@@ -1,7 +1,6 @@
 ### Two classifiers for the US Census Long Covid-19 data
 
 library(DAAG)
-library(party)
 library(rpart)
 library(rpart.plot)
 library(caret)
@@ -10,16 +9,20 @@ library(foreign)
 library(tidyverse)
 library(mlr)
 library(gridExtra)
-library(partykit)
 library(party)
+library(partykit)
 library(MLmetrics)
 library(ggrepel)
 library(ggplot2)
 library(randomForest)
 library(ROCR)
+library(Boruta)
 
-setwd("C:\\work\\internship\\COMP4710-Group-11\\src\\supervised_learning")
-us <- read.csv("../../US_Week49_COVID.csv")
+##set the working folder where this code residues, and put the source file 
+## data in the folder one level up
+
+#setwd("C:\\work\\internship\\COMP4710-Group-11\\src\\supervised_learning")
+us <- read.csv("../US_Week49_COVID.csv")
 us <- us[us$HAD.COVID==1,]
 
 ## treat oral and treat mono has too many NAs; we do not use them for now
@@ -101,14 +104,17 @@ booster <- ggplot(data=train, aes(x=LONG_COVID, fill=BOOSTER ))+geom_bar(positio
 symp_severity <- ggplot(data=train, aes(x=LONG_COVID, fill=SYMPTOM_SEVERITY ))+geom_bar(position="fill",alpha=0.8,color="black")+
   coord_flip()
 
+png(file="./descriptive_analysis.png", width=600, height=800)
 grid.arrange(age, race, gender, vaccinated, doses, booster, symp_severity, ncol=2)
+dev.off()
 train$NUMBER_DOSES <- as.numeric(as.character(train$NUMBER_DOSES))
 
 # apply botura to select features
-library(Boruta)
 set.seed("2022120905")
 result <- Boruta(LONG_COVID ~., data=train)
+png(file="./Boruta_feature_selection.png", width=700, height=400)
 plot(result, pars = list(boxwex = 0.8, staplewex = 0.5, outwex = 0.5) )
+dev.off()
 
 # store the optimization result
 att_stat <- as.data.frame( attStats(result) )
@@ -125,7 +131,7 @@ others <- others[,-4]
 
 ## 1. Classifier 1: Decision Tree
 ## first we tune the parameters cp and maxdepth
-contr <- trainControl(method= "repeatedcv",number=10, repeats=10, classProbs=TRUE, summaryFunction =multiClassSummary)
+contr <- trainControl(method= "repeatedcv",number=10, repeats=10, classProbs=TRUE, summaryFunction = multiClassSummary)
 cart1=caret::train(LONG_COVID~.,data=train,method="rpart",trControl=contr,tuneLength=10)
 ## optimal cp = 0.003
 
@@ -139,14 +145,14 @@ cp_pic <- ggplot(data=cp_path, aes(x=cp, y=AUC)) +
   geom_line()
 mdep_pic <- ggplot(data=maxdepth_path, aes(x=maxdepth, y=AUC)) +
   geom_path()
-#grid.arrange(cp_pic, mdep_pic, pic_tree, pic_rf, ncol=2)
 
 ## train the decision tree:
 tree <- rpart(formula = LONG_COVID ~., data=train, parms=list(split=c("information", "gini")),
               minsplit=2, minbucket=1, cp=0.003, xval=10, maxdepth=3 )
 #plot the tree
+png(file="./decision_tree.png")
 rpart.plot(tree)
-
+dev.off()
 
 ## Classifier 2: Random Forest
 ## First we tune the parameter mtry for the model
@@ -204,7 +210,10 @@ plot_auc <- function(pred){
 
 pic_tree <- plot_auc(p_tree)
 pic_rf <- plot_auc(p_rf)
-grid.arrange(pic_tree, pic_rf, ncol=2)
+png("para_tuning_AUC.png")
+grid.arrange(cp_pic, mdep_pic, pic_tree, pic_rf, ncol=2)
+dev.off()
+#grid.arrange(pic_tree, pic_rf, ncol=2)
 
 
 ##other metrics such as F1-score, accuracy, ...
@@ -213,5 +222,5 @@ confusionMatrix(p_tree2, others$LONG_COVID, mode="everything")
 
 p_rf2 <- predict(model, others, type='class')
 confusionMatrix(p_rf2, others$LONG_COVID, mode="everything")
-
+#just record the metrics from the stdout
 # EOF
