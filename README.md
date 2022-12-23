@@ -68,7 +68,7 @@ The source data file should be in the ./src folder as indicated above.
 install R > 4.2
 
 
-inpstall the following packages:
+install the following packages:
 
  * library(DAAG)
 
